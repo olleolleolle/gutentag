@@ -9,8 +9,8 @@ rvm:
   - 2.6.1
   - jruby-9.2.5.0
 before_install:
-  - rvm @global do gem uninstall bundler --all --ignore-dependencies --executables
-  - gem install bundler --version "< 2.0"
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
 before_script:
   - bundle exec appraisal install
 env:
