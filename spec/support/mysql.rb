@@ -8,13 +8,13 @@ class PatchAdapter
   def call
     return unless using_mysql? && using_rails_pre_4_1?
 
-    require 'active_record/connection_adapters/abstract_mysql_adapter'
+    require "active_record/connection_adapters/abstract_mysql_adapter"
     ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter::
       NATIVE_DATABASE_TYPES[:primary_key] = "int(11) auto_increment PRIMARY KEY"
   end
 
   def using_mysql?
-    ENV.fetch('DATABASE', 'mysql2') == 'mysql2'
+    ENV.fetch("DATABASE", "sqlite") == "mysql"
   end
 
   def using_rails_pre_4_1?
