@@ -23,7 +23,7 @@ end
 appraise "rails_5_0" do
   gem "rails",  "~> 5.0.3"
   gem "mysql2", "~> 0.4.0", :platform => :ruby
-end if RUBY_VERSION.to_f >= 2.2 && RUBY_PLATFORM != "java"
+end if RUBY_VERSION.to_f >= 2.2
 
 appraise "rails_5_1" do
   gem "rails",  "~> 5.1.1"
