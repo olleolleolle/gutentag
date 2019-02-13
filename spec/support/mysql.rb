@@ -6,6 +6,8 @@
 #
 class PatchAdapter
   def call
+    puts "USING MYSQL? #{using_mysql?}"
+    puts "USING OLD RAILS? #{using_rails_pre_4_1?}"
     return unless using_mysql? && using_rails_pre_4_1?
 
     require "active_record/connection_adapters/abstract_mysql_adapter"
@@ -22,4 +24,5 @@ class PatchAdapter
   end
 end
 
+puts "Applying MySQL/ActiveRecord Patch"
 PatchAdapter.new.call
