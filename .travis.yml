@@ -1,4 +1,5 @@
 language: ruby
+dist: xenial
 script: bundle exec appraisal rake
 rvm:
   - jruby-9.2.5.0
@@ -13,3 +14,6 @@ env:
   - DATABASE=postgres
   - DATABASE=mysql
   - DATABASE=sqlite
+services:
+- mysql
+- postgresql
