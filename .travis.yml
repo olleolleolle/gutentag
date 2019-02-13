@@ -6,6 +6,7 @@ before_install:
   - gem update --system
   - gem uninstall bundler --all --ignore-dependencies --executables
   - gem install bundler --version "~> 1.17"
+  - gem list bundler
 before_script:
   - bundle exec appraisal install
 env:
