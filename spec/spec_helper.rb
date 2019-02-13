@@ -9,6 +9,9 @@ ActiveSupport.run_load_hooks :gutentag unless defined?(Gutentag::Engine)
 
 require "rspec/rails"
 
+root = File.expand_path File.dirname(__FILE__)
+Dir["#{root}/support/**/*.rb"].each { |file| require file }
+
 RSpec.configure do |config|
   if config.respond_to?(:use_transactional_tests)
     config.use_transactional_tests = false
